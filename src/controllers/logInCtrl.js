@@ -15,9 +15,13 @@ const verify = async (req, res) => {
     })
     .then(async (response) => {
         var t = await response.json();
-        res.setHeader('Set-Cookie', 'id=' + t.id);
-        res.setHeader('Set-Cookie', 'token=' + t.token);
-        res.redirect('/');
+        if(t.error) {
+            res.redirect('/login');
+        }
+        else {
+            res.setHeader('Set-Cookie', [ 'id=' + t.id, 'token=' + t.token]);
+            res.redirect('/');
+        }
     })
     .catch((err) => {
         console.log(err);

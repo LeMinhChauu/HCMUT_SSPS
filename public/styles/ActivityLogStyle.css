@@ -36,6 +36,10 @@ html {
     box-shadow: 0 2px #999;
 }
 
+#table_tbody tr:nth-child(even) {
+    background-color: #f3f3f3;
+}
+
 .button:hover {
     background-color: rgb(8, 38, 129)
 }
@@ -69,7 +73,8 @@ html {
     left: 50%;
     padding: 0 30px 30px;
     border: 0.5px solid black;
-    visibility: hidden;
+    /* visibility: hidden; */
+    /* display: none; */
     margin-left: auto;
     margin-right: auto;
     position: fixed;
@@ -155,7 +160,7 @@ section table thead tr th {
     color: var(--main-color);
     position: sticky;
     top: 0;
-    background-color: #f1f1f1;
+    background-color: #e0e0e0;
     z-index: 10;
     table-layout: fixed;
     border: 1px solid #aaaaaa00;

@@ -20,6 +20,19 @@
 </head>
 
 <body>
+    <div style="display: none; background-color: rgba(0, 0, 0, 0.7); position: fixed; width: 100%; height: 100%; z-index: 1;" id="logout_popup">
+        <div class="popup">
+            <img src="../img/mess.webp" width="50px" height="50px">
+            <div class="popup_text">
+                <h2 style="margin-top:5%; color:var(--main-color)">Message:</h2>
+                <h4 style="color:var(--text-color)">Are you sure you want to logout?</h4>
+            </div>
+            <div class="button-group">
+                <button class="button" id="del" type="button">Cancel</button>
+                <button class="button" id="out">Log out</button>
+            </div>
+        </div>
+    </div>
     <div class="header">
         <div class="left">
             <div class="img">
@@ -40,23 +53,12 @@
 
         </div>
         <div class="right">
-            <button onclick="OpenPopup()" id="logout" href="#" class="icon"><i
+            <button id="logout" class="icon"><i
                     class="user-item ti-power-off"></i></button>
             <a href="../user-info">
-                <button id="profile" href="#" class="icon"><i class="user-item ti-user"></i></button></a>
+                <button id="profile" class="icon"><i class="user-item ti-user"></i></button></a>
             <p id="student-inf"></p>
 
-        </div>
-    </div>
-    <div class="popup" id="logout_popup">
-        <img src="../img/mess.webp" width="50px" height="50px">
-        <div class="popup_text">
-            <h2 style="margin-top:5%; color:var(--main-color)">Message:</h2>
-            <h4 style="color:var(--text-color)">Are you sure you want to logout?</h4>
-        </div>
-        <div class="button-group">
-            <button onclick="ClosePopup()" class="button" id="del" type="button">Thoát</button>
-            <button class="button" href="#">Log out</button>
         </div>
     </div>
     <style>
