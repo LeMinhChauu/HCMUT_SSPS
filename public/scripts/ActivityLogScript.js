@@ -6,7 +6,6 @@ window.addEventListener('load', (e) => {
         document.getElementById('logout_popup').classList.add("close-popup");
     })
 });
-
 async function getOrder() {
     var table_tbody = document.getElementById('table_tbody');
     const response = await fetch("http://127.0.0.1:3000/order/infor", {
@@ -33,7 +32,7 @@ async function getOrder() {
         numsides.innerText = data[i].numsides;
         para.appendChild(numsides);
         const copies = document.createElement("td");
-        copies.innerText = "1";
+        copies.innerText = data[i].numcopies;
         para.appendChild(copies);
         const papersize = document.createElement("td");
         papersize.innerText = data[i].size;
