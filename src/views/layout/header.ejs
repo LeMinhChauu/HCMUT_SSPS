@@ -37,13 +37,24 @@
 
         </div>
         <div class="right">
-            <button id="logout" href="#" class="icon"><i class="user-item ti-power-off"></i></button>
+            <button onclick="OpenPopup()" id="logout" href="#" class="icon"><i
+                    class="user-item ti-power-off"></i></button>
             <a href="../user-info">
                 <button id="profile" href="#" class="icon"><i class="user-item ti-user"></i></button></a>
             <p id="student-inf"></p>
 
         </div>
     </div>
+    <div class="popup" id="logout_popup">
+        <img src="../img/mess.webp" width="50px" height="50px">
+        <div class="popup_text">
+            <h2 style="margin-top:5%; color:var(--main-color)">Message:</h2>
+            <h4 style="color:var(--text-color)">Are you sure you want to logout?</h4>
+        </div>
+        <div class="button-group">
+            <button onclick="ClosePopup()" class="button" id="del" type="button">Thoát</button>
+            <button class="button" href="#">Log out</button>
+        </div>
     </div>
     <style>
         /* header */
