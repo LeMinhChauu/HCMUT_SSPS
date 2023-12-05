@@ -22,11 +22,10 @@ app.use("/themify-icons",express.static(__dirname + '/themify-icons'));
 
 // route
 app.use('/', require('./routes/ActivityLog'));
-
-// route
 app.use('/', require('./routes/newReq'));
-
 app.use('/', require('./routes/userInfo-routes'));
+app.use('/', require('./routes/logIn'));
+app.use('/', require('./routes/home'));
 
 // start server
 app.listen(PORT, () => {
