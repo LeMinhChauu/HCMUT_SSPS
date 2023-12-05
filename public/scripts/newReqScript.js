@@ -98,6 +98,10 @@ window.addEventListener('load', (e) => {
         result.innerHTML = Math.floor(max_page - mul*cpy*pages/ovpage);
         checkRes();
     });
+    
+    var cookies = document.cookie.split(/\s*;\s*/);
+    var id = cookies[0].split(/\s*=\s*/)[1];
+    var token = cookies[1].split(/\s*=\s*/)[1];
 
     form.addEventListener("submit", submitForm);
     async function submitForm(e) {
@@ -110,14 +114,14 @@ window.addEventListener('load', (e) => {
         const formData = new FormData();
 
         formData.append("size", check_res.page_type);
-        formData.append("numberofpages", 10);
+        formData.append("numberofpages", max_page - result.innerHTML);
         formData.append("orderfile", check_res.files.files[0]);
 
         await fetch("http://127.0.0.1:3000/order/printing", {
             method: "POST",
             body: formData,
             headers: {
-                "Authorization": "655487f17a305c1ebe99a11f eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5lc3RreW84MkBnbWFpbC5jb20iLCJfaWQiOiI2NTU0ODdmMTdhMzA1YzFlYmU5OWExMWYiLCJzdHVkZW50aWQiOiIxMjM0NTYiLCJpYXQiOjE3MDEwNTYzMDYsImV4cCI6MTcwMTY2MTEwNn0.DCvYwayx02isHa22uwYUmW17fFr9tKFkWfFp0JJv89w"
+                "Authorization": id + " " + token
             }
         }).then((res) => {
             location.reload();
