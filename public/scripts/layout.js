@@ -1,7 +1,7 @@
+var cookies = document.cookie.split(/\s*;\s*/);
+var id = cookies[0].split(/\s*=\s*/)[1];
+var token = cookies[1].split(/\s*=\s*/)[1];
 async function getUser() {
-    var cookies = document.cookie.split(/\s*;\s*/);
-    var id = cookies[0].split(/\s*=\s*/)[1];
-    var token = cookies[1].split(/\s*=\s*/)[1];
 
     var user_inf = document.getElementById('student-inf');
     if(user_inf.innerHTML.length > 0) return;
@@ -21,11 +21,4 @@ async function getUser() {
     });
 };
 getUser();
-
-function getTotalPage(page) {
-    var requestPage = document.getElementsByClassName('total-page');
-    if(requestPage) {
-        requestPage[0].children[0].innerHTML = page;
-    }
-}
 

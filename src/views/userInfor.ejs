@@ -1,0 +1,48 @@
+<%- include("layout/header"); %>
+<link rel="stylesheet" href="/public/styles/usersInfor.css">
+<div class="middle">
+    <div class="middle-section">
+        <div class="user-print-info">
+            <div class="user-info">
+                <div class="user-header">
+                    <img src="/assets/picture/user.png" alt="User Image" class="user-image">
+                    <h2>User Information</h2>
+                </div>
+                <!-- Display user information here -->
+                <p><strong>Name:</strong> <span id="student-inf.name"></span></p>
+                <p><strong>MSSV:</strong> <span id="student-inf.MSSV"></span></p>
+                <p><strong>Phone:</strong> 0123-456-789</p>
+                <p><strong>Date of Birth:</strong> January 1, 2003</p>
+            </div>
+
+            <div class="print-info">
+                <h2>Printing Information</h2>
+                <!-- Display printing information here -->
+                <p><strong>Pages Remaining:</strong> <span id="student-inf.pages"></p>
+                <p><strong>Balance:</strong> <span id="student-inf.balance"></span></p>
+                <!-- Send Feedback Section -->
+                <div class="send-feedback-section">
+                    <button class="send-feedback-btn" onclick="openFeedbackForm()">Send Feedback</button>
+                    <div class="feedback-form" id="feedback-form">
+                        <div class="feedback-header">Send Feedback</div> 
+                        <label for="feedback-category">Select Feedback Category:</label>
+                        <select id="feedback-category">
+                            <option value="technical">Technical Issue</option>
+                            <option value="usability">Usability</option>
+                            <option value="feature-request">Feature Request</option>
+                            <option value="different">Different</option> 
+                        </select>
+                        <label for="feedback-topic">Feedback Topic:</label>
+                        <input type="text" id="feedback-topic" placeholder="Enter feedback topic">
+                        <label for="feedback-content">Feedback Content:</label>
+                        <textarea id="feedback-content" rows="4" placeholder="Enter your feedback"></textarea>
+                        <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/public/scripts/userInfoScript.js"></script>
+<%- include("layout/footer"); %>
