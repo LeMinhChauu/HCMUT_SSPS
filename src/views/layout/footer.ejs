@@ -1,57 +1,156 @@
-<div class="footer">
-    <div class="main">
-        <div class="site-info d-flex flex-row justify-content-around">
-            <div class="site-brand">
-                <h6>STUDENT SMART PRINTING SERVIVE</h6>
-                <img src="/assets/picture/hcmut.png" width="auto" height="100" alt="hcmut logo">
-            </div>
-            <div class="website">
-                <h6>WEBSITE</h6>
-                <div class="webs">
-                    <p>HCMUT</p>
-                    <p>MyBK</p>
-                    <p>BKSI</p>
-                </div>
-            </div>
-            <div class="contact">
-                <h6>LIÊN HỆ</h6>
-                <div class="contact-info">
-                    <p><i class="fa-solid fa-location-dot"></i> 268 Lý Thường Kiệt, P.14, Q.10, TP.HCM</p>
-                    <p><i class="fa-solid fa-square-phone-flip"></i> (028) 38 651 670 - (028) 38 647 256 (Ext: 5258, 5234)</p>
-                    <p><i class="fa-solid fa-envelope"></i><a href="mailto:mail@mail.com"> elearning@hcmut.edu.vn</a></p>
-                </div>
-            </div>
+<div id="footer">
+    <div class="footer-list">
+        <div class="footer-item">
+            <div class="footer">STUDENT SMART PRINTING SERVICE</div>
+            <img src="../img/logo.png" alt="Name" class="footer-img">
         </div>
-        <div class="copy-right">
-            <p style="padding: 8px 0; text-align: center;">Copyright 2007-2022 BKEL - Phát triển dựa trên Moodle</p>
+        <div class="footer-item">
+            <div class="footer">WEBSITE</div>
+            <ul class="custom-ul">
+                <li class="mb8"><a href="http://hcmut.edu.vn/" class="custom-link">HCMUT</a></li>
+                <li class="mb8"><a href="https://mybk.hcmut.edu.vn/" class="custom-link">MyBK</a></li>
+                <li class="mb8"><a href="http://mybk.hcmut.edu.vn/bksi/" class="custom-link">BKSI</a></li>
+            </ul>
+        </div>
+        <div class="footer-item">
+            <div class="contact">LIÊN HỆ</div>
+            <div class="contact-info">
+                <ul>
+                    <li class="mb8"><i class="ti-location-pin"></i>268 Lý Thường Kiệt, P.14, Q.10, TP.HCM</li>
+                    <li class="mb8"><i class="ti-mobile"></i>(028) 38 651 670 - (028) 38 647 256 (Ext: 5258, 5234)
+                    </li>
+                    <li class="mb8"><i class="ti-email"></i><a
+                            href="mailto:elearning@hcmut.edu.vn">elearning@hcmut.edu.vn</a></li>
+                </ul>
+            </div>
         </div>
     </div>
-    <style>
-        .footer, a {
-            color: white;
-            text-decoration: none;
-        }
-        a:hover {
-            color: white;
-            text-decoration: underline;
-        }
-        .footer .main{
-            background: url('https://e-learning.hcmut.edu.vn/theme/image.php/boost/theme/1685588876/hcmut2');
-            background-repeat: no-repeat;
-            background-position: top center;
-            background-size: cover;
-        }
-        .footer .site-info {
-            padding: 32px;
-            background-color: rgba(6, 57, 112, 0.6);
-        }
-        .copy-right {
-            background-color: #164399;
-        }
-    </style>
 </div>
+<style>
+    #footer {
+        background: url(../img/background_footer.jpg) bottom;
+        filter: brightness(80%);
+        position: fixed;
+        background-size: cover;
+        /* Đảm bảo hình ảnh bao phủ toàn bộ phần footer */
+        background-position: center;
+        /* Căn giữa hình ảnh */
+        background-repeat: no-repeat;
+        /* Không lặp lại hình ảnh */
+        height: 200px;
+        /* Đặt chiều cao tối thiểu cho phần footer */
+        position: absolute;
+        /* Đặt vị trí cố định để nằm ở dưới cùng của trang */
+        bottom: 0;
+        /* Đặt ở dưới cùng của trang */
+        width: 100%;
+        /* Chiều rộng 100% của trang */
+
+    }
+
+    .footer-list {
+        overflow: hidden;
+        padding-top: 28px;
+    }
+
+    #footer .footer {
+        font-size: 18px;
+        color: #fff;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+
+    #footer .footer-img {
+        width: 100px;
+        border-radius: 4px;
+    }
+
+    #footer .content-section {
+        width: 800px;
+        padding: 64px 0px;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    #footer .footer-item {
+        float: left;
+        margin-top: 15px;
+        width: calc(100%/3);
+        text-align: center;
+        display: block;
+    }
+
+    .custom-ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .custom-ul li {
+        margin-left: 43%;
+        text-align: left;
+    }
+
+    .custom-link {
+        color: white;
+        text-decoration: none;
+        transition: text-decoration 0.3s;
+    }
+
+    .custom-link:hover {
+        text-decoration: underline;
+    }
+
+    .contact-info ul {
+        list-style: none;
+        padding: 0;
+        text-align: left;
+        /* Căn lề nội dung về bên trái */
+    }
+
+    .contact-info li {
+        margin-bottom: 8px;
+        color: white;
+        text-align: left;
+        /* Căn lề nội dung về bên trái */
+    }
+
+    .contact-info li i {
+        margin-right: 8px;
+    }
+
+    .contact-info a {
+        color: white;
+        text-decoration: none;
+        transition: text-decoration 0.3s;
+    }
+
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+
+    .contact {
+        font-weight: bold;
+        color: white;
+        margin-bottom: 15px;
+        font-size: 18px;
+        text-align: left;
+        /* Căn lề văn bản về bên trái */
+    }
+
+    .source {
+        margin-top: 152px;
+        width: 100%;
+        background-color: #fff;
+        text-align: center;
+        padding: 0.7%;
+    }
+</style>
 <script src="/public/scripts/layout.js"></script>
-<script src="/public/scripts/newReqScript.js"></script>
+<script src="/public/scripts/ActivityLogScript.js"></script>
 <script src="https://kit.fontawesome.com/94316c747f.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
