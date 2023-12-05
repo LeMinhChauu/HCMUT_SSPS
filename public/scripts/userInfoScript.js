@@ -1,6 +1,12 @@
-var cookies = document.cookie.split(/\s*;\s*/);
-var id = cookies[0].split(/\s*=\s*/)[1];
-var token = cookies[1].split(/\s*=\s*/)[1];
+var cookies;
+var id;
+var token;
+
+if(document.cookie) {
+    cookies = document.cookie.split(/\s*;\s*/);
+    id = cookies[0].split(/\s*=\s*/)[1];
+    token = cookies[1].split(/\s*=\s*/)[1];
+}
 
 async function getUserName() {
     var user_inf = document.getElementById('student-name');

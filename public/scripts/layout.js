@@ -11,7 +11,7 @@ else {
 async function getUser() {
 
     var user_inf = document.getElementById('student-inf');
-    if(user_inf.innerHTML.length > 0) return;
+    if (user_inf.innerHTML.length > 0) return;
     await fetch("http://127.0.0.1:3000/users/profile", {
         method: "GET",
         headers: {
