@@ -1,0 +1,99 @@
+main {
+    margin-top: 32px;
+    padding: 0;
+    width: 100%;
+}
+
+.bpleft{
+    width: 25%;
+    margin-left: 3%;
+    position: absolute;
+    left: 0;
+}
+
+.bpleft h2{
+    position: relative;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.bp_numplabel{
+    margin-top: 10%;
+    font-size: 18px;
+    color: #192D62;
+}
+
+.bp_nump{
+    display: block;
+    margin: 2px 0px;
+    font-size: 18px;
+    color: #000;
+    border: 1.5px solid #192D62;
+    border-radius: 2px;
+    width: 100%;
+    height:fit-content;
+}
+
+input[type="submit"]{
+    display: block;
+    border: 8px 0;
+    float:inline-end;
+    font-size: 18px;
+    color: #000;
+    background-color: #fff;
+    border: 1.5px solid #192D62;
+    border-radius: 4px;
+    width: 110px;
+    height: 35px;
+    text-align: center;
+    font-weight: bold;
+}
+
+select.bp_nump:hover{
+    border: 1.5px solid #192D62;
+    cursor: pointer;
+}
+
+
+input[type="submit"]:hover{
+    background-color: #192D62;
+    color: #fff;
+    cursor: pointer;
+}
+
+.bpinfo{
+    margin: 20% 0 auto;
+    font-size: 16px;
+}
+
+
+.bpright{
+    width: 55%;
+    margin-right: 3%;
+    position: absolute;
+    right:0;
+}
+
+.bpright h2{
+    color: #000;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.bptable {
+    width: 90%;
+    height: 60%;
+    overflow: scroll;
+    text-align: center;
+    font-size: 16px;
+}
+
+.bptable .bpoddrow{
+    background-color: #f4f4f4;
+    padding: 8px;
+    text-align: center;
+}
+
+.bptable tr{
+    height: max-content;
+}

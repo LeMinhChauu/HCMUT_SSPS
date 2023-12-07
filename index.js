@@ -28,6 +28,7 @@ app.use('/', require('./routes/newReq'));
 app.use('/', require('./routes/userInfo-routes'));
 app.use('/', require('./routes/logIn'));
 app.use('/', require('./routes/home'));
+app.use('/', require('./routes/buyPaper'));
 
 // start server
 app.listen(PORT, () => {

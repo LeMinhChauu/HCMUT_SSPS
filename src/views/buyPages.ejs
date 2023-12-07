@@ -1,0 +1,59 @@
+    <%- include("layout/header"); %>
+
+    <main style="min-height: 386px;">
+        <div class="bpleft">  
+            <h2>Mua trang in</h2>
+            <form method="POST">
+                <label for="num1" class="bp_numplabel">Nhập số trang muốn mua:</label>
+                <input id="num1" class="bp_nump" type="number" name="bp_nump" placeholder="Numbers of pages...">
+                <br>
+                <select class="bp_nump" name="bp_sizep" aria-placeholder="Chọn khổ giấy">  
+                    <option value=NULL>Chọn khổ giấy</option>
+                    <option value="A3">A3</option>
+                    <option value="A4">A4</option>
+                </select>
+                <br>
+                <input type="submit" value="Xác nhận">
+            </form>
+            <div class="bpinfo">
+                <p>
+                    Số dư trang in (page) của bạn:  trang<br>
+                    Mức giá hiện tại: /40 trang
+                </p>
+                
+            </div>
+        </div>
+        <div class="bpright">
+            <h2>Lịch sử mua trang in:</h2>
+            <table class="bptable">
+                <thead>
+                    <tr class="bpoddrow">
+                        <th scope="col">Mã hóa đơn</th>
+                        <th scope="col">Thời gian</th>
+                        <th scope="col">Số trang mua</th>
+                        <th scope="col">Tổng tiền</th>
+                        <th scope="col">Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/01/2021</td>
+                        <td>10</td>
+                        <td>A4</td>
+                        <td>100.000đ</td>
+                        <td>Chưa thanh toán</td>
+                    </tr>
+                    <tr class="bpoddrow">
+                        <td>02/01/2021</td>
+                        <td>10</td>
+                        <td>A4</td>
+                        <td>125.000đ</td>
+                        <td>Đã thanh toán</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script src="/public/scripts/buyPages.js"></script>
+    <%- include("layout/footer"); %>

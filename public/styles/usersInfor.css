@@ -125,31 +125,43 @@ html {
         font-size: 60%;
     }
 }
-
+.middleInfor {
+    background: #f5f5f5;
+    /* height: 487px; */
+    align-items: center;
+    justify-content: center;
+}
 .middle-section {
+   
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 550px;
     flex-direction: column;
-    background-color: #f5f5f5;
+    margin-left: 5%;
+    background-color:red;
+    width: 90%;
+    border-radius: 8px;
+}
+.user-avatar{
+    background-color: #fff;
+    text-align: left;
+    width: calc(100%/10);
 }
 
 .user-info,
 .print-info {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    max-width: 400px;
+    margin: 40px;
+     max-width: 430px; 
     text-align: left;
+    width: calc(100%/2);
 }
 
 .user-info h2,
 .print-info h2 {
     color: var(--main-color);
     margin-bottom: 10px;
+    font-size: 30px;
 }
 
 .user-info p,
@@ -157,6 +169,71 @@ html {
     margin: 8px 0;
     border-bottom: 1px solid #ddd; /* Add a border-bottom for separation */
     padding-bottom: 8px; /* Optional: Add some padding for better spacing */
+    font-size: 18px;
+}
+
+.user-image {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+
+.user-print-info {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+@media (max-height: 1100px) {
+
+    .middleInfor{
+        height: 600px;
+    }
+}
+
+
+.middle-section {
+    width: 90%; /* Adjust the maximum width as needed */
+    /* margin: 0 auto; /* Center the content */
+    /* padding: 20px; */ 
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #fff; /* Background color for the content area */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow for depth */
+}
+
+.user-print-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-avatar img {
+    border-radius: 50%; /* Make the user avatar circular */
+    max-width: 100px; /* Adjust the maximum width as needed */
+}
+
+.user-info {
+    margin-left: 20px;
+}
+
+.user-header h2, .print-info h2, .feedback-header {
+    color: #007B5E; /* Green color for headers */
+}
+
+/* Style for user information */
+.user-info p {
+    margin: 5px 0;
+    color: #333;
+    
+}
+
+/* Style for printing information */
+.print-info p {
+    margin: 5px 0;
+    color: #333;
 }
 .feedback-section {
     margin-top: 20px;
@@ -197,208 +274,26 @@ html {
     display: block;
     margin-bottom: 10px;
 }
-.user-image {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    margin-right: 10px;
-    margin-bottom: 20px;
-}
-.middle-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 550px;
-    flex-direction: column;
-    background-color: #f5f5f5;
-}
-
-.user-print-info {
-    display: flex;
-}
-
-.user-info,
-.print-info {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    max-width: 400px;
-    text-align: left;
-}
-
-.user-info {
-    margin-right: 20px;
-}
-
-.user-info h2,
-.print-info h2 {
-    color: var(--main-color);
-    margin-bottom: 10px;
-}
-
-.user-info p,
-.print-info p {
-    margin: 8px 0;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 8px;
-}
-.user-info p,
-.print-info p {
-    margin: 12px 0; /* Increase margin for better spacing */
-    font-size: 20px; /* Set the desired font size */
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 14px; /* Increase padding for better spacing */
-}
 .send-feedback-section {
     margin-top: 20px;
+    display: flex;
 }
 
 .send-feedback-btn {
     margin-bottom: 10px;
     cursor: pointer;
+    margin-right: 40px;
 }
-
-.feedback-form {
-    display: none;
-}
-
-.feedback-form.show-feedback-form {
-    display: block;
-}
-
-.feedback-form label,
-.feedback-form input,
-.feedback-form textarea,
-.feedback-form button {
-    display: block;
+.activity-btn{
+    margin-top: 20px ;
     margin-bottom: 10px;
-}
-.feedback-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Ensure it's above other elements */
-}
-
-.feedback-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    max-width: 400px;
-}
-
-.close-feedback-btn {
-    margin-top: 10px;
-    cursor: pointer;
-}
-.send-feedback-btn {
-    padding: 10px 20px;
+    margin-right: 40px;
     font-size: 16px;
-    background-color: var(--main-color);
+    background-color: #007B5E;
     color: #fff;
+    padding: 10px 30px;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
+    border-radius: 5px;
     transition: background-color 0.3s ease;
-}
-
-.send-feedback-btn:hover {
-    background-color: #007BFF;
-}
-/* Feedback overlay */
-.feedback-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Hiệu ứng xám */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000; /* Đảm bảo ở trên tất cả các phần tử khác */
-}
-
-/* Hiển thị form feedback giữa trang */
-.feedback-form {
-    display: none;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: left;
-    min-width: 400px;
-    z-index: 1001; /* Đảm bảo ở trên overlay */
-    background-color: #fff;
-    
-    max-width: 500px; /* Đặt giá trị max-width để tránh quá rộng */
-    margin: 0 auto; /* Để giữa trang */
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-/* Kích thước form feedback */
-.feedback-form label,
-.feedback-form input,
-.feedback-form textarea,
-.feedback-form button {
-    display: block;
-    margin-bottom: 10px;
-    width: 100%; /* Điều này làm cho phần tử rộng bằng 100% của form feedback */
-}
-
-/* Ẩn hiệu ứng xám và form feedback mặc định */
-.feedback-overlay:not(.show-feedback) {
-    display: none;
-}
-
-.feedback-form:not(.show-feedback-form) {
-    display: none;
-}
-
-/* Hiển thị form feedback giữa trang */
-.feedback-header {
-    background-color: #164399;
-    color: #fff;
-    font-size: 20px;
-    padding: 10px;
-    text-align: center;
-}
-/* Thêm các thuộc tính cho ô nhập feedback topic và feedback content */
-#feedback-topic,
-#feedback-content {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-/* Hover effect cho ô nhập */
-#feedback-topic:hover,
-#feedback-content:hover {
-    border-color: #007BFF; /* Màu xanh khi hover */
-}
-
-/* Focus effect cho ô nhập */
-#feedback-topic:focus,
-#feedback-content:focus {
-    outline: none;
-    border-color: #164399; /* Màu xanh đậm khi focus */
-    box-shadow: 0 0 5px rgba(22, 67, 153, 0.5); /* Đổ bóng khi focus */
 }

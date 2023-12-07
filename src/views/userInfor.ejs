@@ -1,18 +1,20 @@
 <%- include("layout/header"); %>
 <link rel="stylesheet" href="/public/styles/usersInfor.css">
-<div class="middle">
+
+<div class="middleInfor">
     <div class="middle-section">
         <div class="user-print-info">
+            <div class="user-avatar"><img src="/img/User-avatar.svg.png" alt="User Image" class="user-image"></div>
             <div class="user-info">
                 <div class="user-header">
-                    <img src="/assets/picture/user.png" alt="User Image" class="user-image">
+                    
                     <h2>User Information</h2>
                 </div>
                 <!-- Display user information here -->
                 <p><strong>Name:</strong> <span id="student-inf.name"></span></p>
                 <p><strong>MSSV:</strong> <span id="student-inf.MSSV"></span></p>
-                <p><strong>Phone:</strong> 0123-456-789</p>
-                <p><strong>Date of Birth:</strong> January 1, 2003</p>
+                <p><strong>Phone:</strong> <span id="student-inf.phone"></span></p>
+                <p><strong>Date of Birth:</strong> <span id="student-inf.birthday"></span></p>
             </div>
 
             <div class="print-info">
@@ -21,7 +23,7 @@
                 <p><strong>Pages Remaining:</strong> <span id="student-inf.pages"></p>
                 <p><strong>Balance:</strong> <span id="student-inf.balance"></span></p>
                 <!-- Send Feedback Section -->
-                <div class="send-feedback-section">
+                <!-- <div class="send-feedback-section">
                     <button class="send-feedback-btn" onclick="openFeedbackForm()">Send Feedback</button>
                     <div class="feedback-form" id="feedback-form">
                         <div class="feedback-header">Send Feedback</div> 
@@ -37,7 +39,10 @@
                         <label for="feedback-content">Feedback Content:</label>
                         <textarea id="feedback-content" rows="4" placeholder="Enter your feedback"></textarea>
                         <button type="button" onclick="submitFeedback()">Submit Feedback</button>
-                    </div>
+                    </div> -->
+                    <a href="../buy-pages"><button  class="activity-btn">Buy Paper</button></a>
+                    <a href="../activityLog"><button  class="activity-btn">Activity Log</button></a>
+                    
                 </div>
                 
             </div>
