@@ -1,5 +1,8 @@
 const buyPaper = (req, res) => {
-    res.render('buyPages');
+    if(req.headers.cookie) {
+        res.render('buyPages');
+    }
+    res.redirect('logIn');
 }
 
 module.exports = {
