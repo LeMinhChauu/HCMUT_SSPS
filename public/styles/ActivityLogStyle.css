@@ -81,6 +81,7 @@ html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 100;
 }
 
 .popup img {
@@ -106,21 +107,6 @@ html {
     padding: 1%;
 }
 
-/*Table in Popup*/
-.popup .popup_text table tr th {
-    padding: 2%;
-}
-
-.popup .popup_text table .title_ {
-
-    color: var(--main-color);
-}
-
-.popup .popup_text table .title_ i {
-    margin-right: 3%;
-}
-
-/*End table in Popup*/
 
 .close-popup {
     visibility: hidden;
@@ -136,36 +122,41 @@ html {
 }
 
 
-.body {
+#body_acti {
     height: 420px;
 }
 
-section {
+#body_acti section {
     padding: 1rem 6%;
 }
 
-section h4 {
+#body_acti section h4 {
     text-align: center;
     padding: 0.5rem;
 }
 
-section table {
+#body_acti section table {
     font-size: 13px;
     table-layout: fixed;
     text-align: center;
     background-color: #FFFFFF;
 }
 
-section table thead tr th {
+#body_acti section table thead tr th {
     color: var(--main-color);
     position: sticky;
     top: 0;
     background-color: #e0e0e0;
-    z-index: 10;
     table-layout: fixed;
     border: 1px solid #aaaaaa00;
 }
 
+#body_acti section table tbody tr:hover {
+    background-color: rgb(225, 219, 219);
+}
+#body_acti section table tbody tr td{
+    background-color: rgba(218, 213, 213, 0.16);
+}
 #searchInput {
     background-image: url('/img/searchicon.png');
     background-size: 40px 40px;
