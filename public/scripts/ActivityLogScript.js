@@ -1,12 +1,12 @@
 
 
 async function getOrder() {
-    if(document.cookie) {
+    if (document.cookie) {
         var cookies = document.cookie.split(/\s*;\s*/);
         var id = cookies[0].split(/\s*=\s*/)[1];
         var token = cookies[1].split(/\s*=\s*/)[1];
     }
-    
+
     var table_tbody = document.getElementById('table_tbody');
     const response = await fetch("http://127.0.0.1:3000/order/infor", {
         method: "GET",
@@ -14,8 +14,9 @@ async function getOrder() {
             "Authorization": id + " " + token
         }
     });
-    
+
     const data = await response.json();
+    console.log(data);
     for (var i = data.length - 1; i >= 0; i--) {
         const para = document.createElement("tr");
         const date1 = document.createElement("td");
