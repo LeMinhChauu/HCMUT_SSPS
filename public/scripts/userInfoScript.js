@@ -8,9 +8,13 @@ if(document.cookie) {
     token = cookies[1].split(/\s*=\s*/)[1];
 }
 
-async function getUserName() {
-    var user_inf = document.getElementById('student-name');
-    if(user_inf.innerHTML.length > 0) return;
+async function getUserInfo() {
+    var user_name = document.getElementById('student-inf.name');
+    if(user_name.innerHTML.length > 0) return;
+    var user_id = document.getElementById('student-inf.MSSV');
+    var user_balance = document.getElementById('student-inf.balance');
+    var user_pages = document.getElementById('student-inf.pages');
+
     await fetch("http://127.0.0.1:3000/users/profile", {
         method: "GET",
         headers: {
@@ -18,94 +22,17 @@ async function getUserName() {
         }
     }).then(async (res) => {
         user = await res.json();
-        user_inf.innerHTML = user.name ;
-
-        // var pageleft = user.pages;
-        // getTotalPage(pageleft);
+        user_name.innerHTML = user.name;
+        user_id.innerHTML = user.studentid;
+        user_balance.innerHTML = user.balance;
+        user_pages.innerHTML = user.pages;
     }).catch((err) => {
         console.log(err);
     });
 };
-getUserName();
+getUserInfo();
 
 
-async function getUserName() {
-    var user_inf = document.getElementById('student-inf.name');
-    if(user_inf.innerHTML.length > 0) return;
-    await fetch("http://127.0.0.1:3000/users/profile", {
-        method: "GET",
-        headers: {
-            "Authorization": id + " " + token
-        }
-    }).then(async (res) => {
-        user = await res.json();
-        user_inf.innerHTML = user.name ;
-
-        // var pageleft = user.pages;
-        // getTotalPage(pageleft);
-    }).catch((err) => {
-        console.log(err);
-    });
-};
-getUserName();
-async function getUserMSSV() {
-    var user_inf = document.getElementById('student-inf.MSSV');
-    if(user_inf.innerHTML.length > 0) return;
-    await fetch("http://127.0.0.1:3000/users/profile", {
-        method: "GET",
-        headers: {
-            "Authorization": id + " " + token
-        }
-    }).then(async (res) => {
-        user = await res.json();
-        user_inf.innerHTML = user.studentid ;
-
-        // var pageleft = user.pages;
-        // getTotalPage(pageleft);
-    }).catch((err) => {
-        console.log(err);
-    });
-};
-getUserMSSV();
-async function getUserbalance() {
-    var user_inf = document.getElementById('student-inf.balance');
-    if(user_inf.innerHTML.length > 0) return;
-    await fetch("http://127.0.0.1:3000/users/profile", {
-        method: "GET",
-        headers: {
-            "Authorization": id + " " + token
-        }
-    }).then(async (res) => {
-        user = await res.json();
-        user_inf.innerHTML = user.balance ;
-
-        // var pageleft = user.pages;
-        // getTotalPage(pageleft);
-    }).catch((err) => {
-        console.log(err);
-    });
-};
-getUserbalance();
-
-getUserMSSV();
-async function getUserpages() {
-    var user_inf = document.getElementById('student-inf.pages');
-    if(user_inf.innerHTML.length > 0) return;
-    await fetch("http://127.0.0.1:3000/users/profile", {
-        method: "GET",
-        headers: {
-            "Authorization": id + " " + token
-        }
-    }).then(async (res) => {
-        user = await res.json();
-        user_inf.innerHTML = user.pages ;
-        // var pageleft = user.pages;
-        // getTotalPage(pageleft);
-    }).catch((err) => {
-        console.log(err);
-    });
-};
-getUserpages();
 // Mở form feedback khi click vào nút "Send Feedback"
 function openFeedbackForm() {
     var feedbackForm = document.getElementById('feedback-form');
@@ -127,16 +54,16 @@ function closeFeedbackForm() {
 }
 
 // Gọi hàm closeFeedbackForm khi click vào overlay
-document.getElementById('feedback-overlay').addEventListener('click', function (event) {
-    if (event.target === this) {
-        closeFeedbackForm();
-    }
-});
+// document.getElementById('feedback-overlay').addEventListener('click', function (event) {
+//     if (event.target === this) {
+//         closeFeedbackForm();
+//     }
+// });
 
 // Gọi hàm closeFeedbackForm khi click vào nút "Close"
-document.getElementById('close-feedback-btn').addEventListener('click', function () {
-    closeFeedbackForm();
-});
+// document.getElementById('close-feedback-btn').addEventListener('click', function () {
+//     closeFeedbackForm();
+// });
 
 // Gửi feedback (cần cập nhật hàm này tùy thuộc vào yêu cầu của bạn)
 function submitFeedback() {

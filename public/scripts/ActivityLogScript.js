@@ -13,8 +13,10 @@ async function getOrder() {
         headers: {
             "Authorization": id + " " + token
         }
-    }); const data = await response.json();
-    for (var i = 0; i < data.length; i++) {
+    });
+    
+    const data = await response.json();
+    for (var i = data.length - 1; i >= 0; i--) {
         const para = document.createElement("tr");
         const date1 = document.createElement("td");
         date1.innerText = data[i].orderdatestart;

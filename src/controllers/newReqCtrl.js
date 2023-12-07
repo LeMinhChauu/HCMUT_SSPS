@@ -29,6 +29,7 @@ const newReq = async (req, res) => {
 }
 
 const newPostReq = async (req, res) => {
+    // console.log(req);
     // const formData = new FormData();
     // formData.append("body", req.body);
     // formData.append("orderfile", req.files[0]);
