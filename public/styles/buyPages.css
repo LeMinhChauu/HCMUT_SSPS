@@ -5,10 +5,10 @@ main {
 }
 
 .bpleft{
-    width: 25%;
+    width:25%;
+    height: fit-content;
     margin-left: 3%;
-    position: absolute;
-    left: 0;
+    display: inline-block;
 }
 
 .bpleft h2{
@@ -34,7 +34,7 @@ main {
     height:fit-content;
 }
 
-input[type="submit"]{
+#submitbtn{
     display: block;
     border: 8px 0;
     float:inline-end;
@@ -54,24 +54,24 @@ select.bp_nump:hover{
     cursor: pointer;
 }
 
-
-input[type="submit"]:hover{
+#submitbtn:hover{
     background-color: #192D62;
     color: #fff;
     cursor: pointer;
 }
 
 .bpinfo{
-    margin: 20% 0 auto;
+    margin: 18% 0 auto;
     font-size: 16px;
 }
 
 
 .bpright{
+    float: right;
+    clear: left;
     width: 55%;
+    height: fit-content;
     margin-right: 3%;
-    position: absolute;
-    right:0;
 }
 
 .bpright h2{
@@ -80,7 +80,7 @@ input[type="submit"]:hover{
     font-style: italic;
 }
 
-.bptable {
+#bptable {
     width: 90%;
     height: 60%;
     overflow: scroll;
