@@ -116,6 +116,8 @@ window.addEventListener('load', (e) => {
         formData.append("size", check_res.page_type);
         formData.append("numberofpages", max_page - result.innerHTML);
         formData.append("orderfile", check_res.files.files[0]);
+        formData.append("numcopies", check_res.number_copies);
+        formData.append("numsides", check_res.page_print);
 
         await fetch("http://127.0.0.1:3000/order/printing", {
             method: "POST",
