@@ -1,6 +1,6 @@
 <%- include("layout/header"); %>
 <div class="new-print-request" style="padding: 20px;">
-    <h5>Đăng ký yêu cầu in</h5>
+    <h5>New Printing Request</h5>
     <div class="print-request" style="padding: 0 32px;">
         <form id="form" method="post" enctype="multipart/form-data" class="d-flex flex-row justify-content-between">
             <div class="choose-file w-30">
@@ -14,8 +14,8 @@
                     <a href="#" class="btn btn-outline-dark w-70" style="text-decoration: none;">Printed file</a>
                 </div>
                 <div class="file-chosen">
-                    <h6>Tập tin đã chọn</h6>
-                    <label class="w-70 text-center" id="file-name" for="file-upload">Your file here</label>
+                    <h6>Your file</h6>
+                    <label class="w-70 text-center" id="file-name" for="file-upload">Your file name here</label>
                 </div>
             </div>
             <div class="print-options w-30">
@@ -79,15 +79,14 @@
                     </div>
                 </div>
                 <div class="result" style="margin-top: 32px;">
-                    <h6>Kết quả</h6>
-                    <div class="total-page">Số trang: <span><%= user.pages %></span> (trang)</div>
-                    <!-- <div class="total-money">Tổng tiền: <span></span> (VNĐ)</div> -->
-                    <div class="remain">Còn lại: <span></span> (trang)</div><br>
+                    <h6>Result</h6>
+                    <div class="total-page">Your Pages: <span><%= user.pages %></span> (pages)</div>
+                    <div class="remain">Remain: <span></span> (pages)</div><br>
                 </div>
                 <div class="buttons d-flex flex-row justify-content-between w-70" style="margin-top: 32px;">
-                    <a href="/buy-pages" class="btn btn-outline-primary" style="text-decoration: none;">Mua thêm</a>
-                    <button id="submit-btn" class="btn btn-outline-success" type="submit">Hoàn tất</button>
-                    <button id="reset" class="btn btn-outline-danger" type="reset">Hủy đơn</button>
+                    <a href="/buy-pages" class="btn btn-outline-primary" style="text-decoration: none;">More pages</a>
+                    <button id="submit-btn" class="btn btn-outline-success" type="submit">Submit</button>
+                    <button id="reset" class="btn btn-outline-danger" type="reset">Cancel</button>
                 </div>
             </div>
         </form>

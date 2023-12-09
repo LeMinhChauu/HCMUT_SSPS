@@ -44,20 +44,11 @@
                 <h6>TRƯỜNG ĐẠI HỌC BÁCH KHOA</h6>
             </div>
         </div>
-        <div class="middle">
-            <a href="/">
-                <h5>Main Page</h5>
-            </a>
-            <a href="../printing-request">
-                <h5>New Request</h5>
-            </a>
-            <a href="../buy-pages">
-                <h5>Buy Pages</h5>
-            </a>
-            <a href="../activitylog">
-                <h5>History</h5>
-            </a>
-
+        <div class="middle" style="width: 40%;">
+            <a href="/">Home</a>
+            <a href="../printing-request">New Request</a>
+            <a href="../buy-pages">More Pages</a>
+            <a href="../activitylog">History</a>
         </div>
         <div class="right">
             <button id="logout" class="icon"><i
@@ -72,11 +63,13 @@
         /* header */
         .header {
             width: 100%;
-            height: 100px;
             box-shadow: #0000003a 1px 1px 0 0;
             background-color: rgba(26, 26, 101, 0.863);
             color: var(--text-white);
             z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            height: 96px;
         }
 
         .header .left {
@@ -109,19 +102,18 @@
         }
 
         .header .middle {
-            width: 50%;
-            padding: 1.7%;
-            display: inline;
+            display: flex;
+            justify-content: space-around;
         }
-
+        
         .header .middle a {
-            margin-left: auto;
-            margin-right: auto;
-            float: left;
+            display: inline-block;
             color: var(--text-white);
             text-decoration: none;
-            margin: 1.7%;
-
+            font-size: 18px;
+            font-weight: 500;
+            height: 96px;
+            line-height: 96px;
         }
 
         .header .right {

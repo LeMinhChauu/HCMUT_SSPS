@@ -65,35 +65,49 @@ select.bp_nump:hover{
     font-size: 16px;
 }
 
-
 .bpright{
     float: right;
     clear: left;
     width: 55%;
-    height: fit-content;
     margin-right: 3%;
+    position: relative;
 }
 
-.bpright h2{
+.tb {
+    max-height: 324px;
+    overflow-y: scroll;
+    border: 1px solid black;
+}
+.tb::-webkit-scrollbar {
+    display: none;
+}
+
+.title {
     color: #000;
     font-size: 16px;
     font-style: italic;
 }
 
 #bptable {
-    width: 90%;
-    height: 60%;
+    width: 100%;
     overflow: scroll;
     text-align: center;
     font-size: 16px;
+    line-height: 2;
 }
 
-.bptable .bpoddrow{
-    background-color: #f4f4f4;
+#bptable thead {
+    width: 100%;
+}
+
+#bptable .bpoddrow{
+    background-color: rgb(213, 213, 213);
     padding: 8px;
     text-align: center;
+    position: sticky;
+    top: 0px;
 }
 
-.bptable tr{
-    height: max-content;
+#bptable tbody tr:nth-child(even) {
+    background-color: #efefef;
 }

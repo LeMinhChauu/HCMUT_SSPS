@@ -10,8 +10,8 @@ window.addEventListener('load', (e) => {
     }
 
     var curprice = 10000;
-    var remainPage = document.getElementById('remain-page');
-    var balance = 0;
+    var remainPage = document.getElementById('pages-remain');
+    var balance = document.getElementById('balance-remain');
     
     async function getRemainPage() {
         await fetch("http://127.0.0.1:3000/users/profile", {
@@ -26,7 +26,7 @@ window.addEventListener('load', (e) => {
         }).catch((err) => {
             console.log(err);
         });
-        document.getElementById('page-price').innerHTML = curprice;
+        document.getElementById('page-price').innerHTML = curprice/40;
     }
     getRemainPage();
 
@@ -52,46 +52,20 @@ window.addEventListener('load', (e) => {
 
     var form = document.getElementById('form');
     var bptable = document.getElementById('bptable');
-    form.addEventListener('submit', async (e) =>
-    {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
-        // const orderid = uuidv4();
-        // Date here
-        // totalPage here
+
         var amount = curprice*totalPage/40;
         var paidstt = 0;
+        
         if(amount <= balance) {
-            await commitPurchase();
+            await commitPurchase(amount);
             paidstt = 1;
+            location.reload();
         }
-
-        const row = document.createElement("tr");
-        const id = document.createElement("td");
-        id.innerText = no++;
-        row.appendChild(id);
-        const datebp = document.createElement("td");
-        datebp.innerText = (new Date(Date.now()).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' }));
-        row.appendChild(datebp);
-        const nump = document.createElement("td");
-        nump.innerText = totalPage;
-        row.appendChild(nump);
-        const price = document.createElement("td");
-        price.innerText = amount;
-        row.appendChild(price);
-        const paid = document.createElement("td");
-        if(paidstt == 1) {
-            paid.innerText = "Đã thanh toán";
-            paid.style = "color: #000; font-weight: 500";
+        else {
+            window.alert("Not enough money!");
         }
-        else {            
-            // row.setAttribute("id", orderid);
-            row.setAttribute("OnClick", "pay(this.id)");
-            paid.innerText = "Chưa thanh toán";
-            paid.style = "color: #190482; font-weight: 500; text-decoration: underline";
-        }
-        row.appendChild(paid);
-        bptable.appendChild(row);
-        commitPurchase(amount);
     });    
 
     async function commitPurchase(amount) {
