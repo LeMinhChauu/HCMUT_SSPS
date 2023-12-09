@@ -3,11 +3,11 @@
     <main style="min-height: 386px;">
         <div class="bpleft">  
             <h2>Mua trang in</h2>
-            <form method="POST">
+            <form method="POST" id="form">
                 <label for="page-num" class="bp_numplabel">Nhập số trang muốn mua:</label>
                 <input id="page-num" class="bp_nump" type="number" name="bp_nump" placeholder="Numbers of pages...">
                 <br>
-                <select class="bp_nump" name="bp_sizep">  
+                <select class="bp_nump" name="bp_sizep" id="page-type">  
                     <option value="0" hidden>Chọn khổ giấy</option>
                     <option value="A3">A3</option>
                     <option value="A4">A4</option>
@@ -39,5 +39,5 @@
         </div>
     </main>
 
-    <script src="/public/scripts/buyPages.js"></script>
+    <script src="/public/scripts/buyPagesScript.js"></script>
     <%- include("layout/footer"); %>

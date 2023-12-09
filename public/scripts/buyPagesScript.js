@@ -1,6 +1,5 @@
-// const { response } = require("express");
-const uuidv4 = require("uuid/v4");
 window.addEventListener('load', (e) => {
+    var no = 0;
     if(document.cookie) {
         var cookies;
         var id;
@@ -13,6 +12,7 @@ window.addEventListener('load', (e) => {
     var curprice = 10000;
     var remainPage = document.getElementById('remain-page');
     var balance = 0;
+    
     async function getRemainPage() {
         await fetch("http://127.0.0.1:3000/users/profile", {
             method: "GET",
@@ -55,11 +55,11 @@ window.addEventListener('load', (e) => {
     form.addEventListener('submit', async (e) =>
     {
         e.preventDefault();
-        const orderid = uuidv4();
+        // const orderid = uuidv4();
         // Date here
         // totalPage here
-        const amount = curprice*totalPage;
-        const paidstt = 0;
+        var amount = curprice*totalPage/40;
+        var paidstt = 0;
         if(amount <= balance) {
             await commitPurchase();
             paidstt = 1;
@@ -67,11 +67,11 @@ window.addEventListener('load', (e) => {
 
         const row = document.createElement("tr");
         const id = document.createElement("td");
-        id.innerText = orderid;
+        id.innerText = no++;
         row.appendChild(id);
         const datebp = document.createElement("td");
         datebp.innerText = (new Date(Date.now()).toLocaleString('vi-VN', { timeZone: 'Asia/Ho_Chi_Minh' }));
-        row.appendChild(date);
+        row.appendChild(datebp);
         const nump = document.createElement("td");
         nump.innerText = totalPage;
         row.appendChild(nump);
@@ -84,26 +84,31 @@ window.addEventListener('load', (e) => {
             paid.style = "color: #000; font-weight: 500";
         }
         else {            
-            row.setAttribute("id", orderid);
+            // row.setAttribute("id", orderid);
             row.setAttribute("OnClick", "pay(this.id)");
             paid.innerText = "Chưa thanh toán";
             paid.style = "color: #190482; font-weight: 500; text-decoration: underline";
         }
         row.appendChild(paid);
-        bptable.appendChild(row);        
+        bptable.appendChild(row);
+        commitPurchase(amount);
     });    
 
-    async function commitPurchase() {
-        const formData = new FormData(e);
-        
-        formData.append("number", totalPage);
-        formData.append("money", amount);
+    async function commitPurchase(amount) {
+        var type = document.getElementById('page-type').value;
+        var numpage = document.getElementById('page-num').value;
+        var ex = 1;
+        if(type == "A3") ex = 2;
 
         await fetch("http://127.0.0.1:3000/users/buypaper", {
             method: "POST",
-            body: formData,
+            body: JSON.stringify({
+                "number": numpage,
+                "money": (curprice*numpage*ex)/40
+            }),
             headers: {
-                "Authorization": id + " " + token
+                "Authorization": id + " " + token,
+                "Content-Type": "application/json"
             }
         }).then((res) => {
             getRemainPage();
